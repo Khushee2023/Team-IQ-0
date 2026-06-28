@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cyberattack Detection Dashboard</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="navbar-brand">
+        <span class="icon">🛡️</span>
+        <div>
+            <h1>Intelligent Cyberattack Detection System</h1>
+            <div class="subtitle">Agentic AI · Behavioral Fingerprinting · Explainable Decisions</div>
+        </div>
+    </div>
+    <div class="status-badge"><span class="status-dot"></span> Live Monitoring</div>
+</div>
+
+<div class="container">
+
+    <div class="summary-grid" id="summary-cards">
+        <div class="loading">Loading summary...</div>
+    </div>
+
+    <div class="charts-row">
+        <div class="panel">
+            <h3>Attack Type Breakdown</h3>
+            <div id="attack-breakdown"></div>
+        </div>
+        <div class="panel">
+            <h3>Severity Distribution</h3>
+            <div class="severity-donut" id="severity-distribution"></div>
+        </div>
+    </div>
+
+    <div class="panel" style="margin-bottom:32px;">
+        <h3>🧬 Behavioral Fingerprinting — Brute Force Attacks</h3>
+        <p class="panel-subtext">Distinguishes automated single-source attacks from irregular, possibly coordinated campaigns — helping analysts decide response scope.</p>
+        <div id="fingerprint-panel"><div class="loading">Loading...</div></div>
+    </div>
+
+    <div class="alerts-panel">
+        <div class="alerts-header">
+            <h3>Detected Alerts — Click any row to investigate</h3>
+            <span class="alerts-count" id="alerts-count"></span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Flow ID</th><th>Predicted Type</th><th>Confidence</th>
+                    <th>Anomaly</th><th>Behavior</th><th>Severity</th><th>Analyst Decision</th>
+                </tr>
+            </thead>
+            <tbody id="alerts-table-body"><tr><td colspan="8" class="loading">Loading alerts...</td></tr></tbody>
+        </table>
+    </div>
+
+</div>
+
+<div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+        <div class="modal-header">
+            <h2 id="modal-title">Alert Detail</h2>
+            <button class="modal-close" onclick="closeModal()">✕</button>
+        </div>
+        <div class="detail-grid" id="modal-detail-grid"></div>
+
+        <div class="explain-box" id="modal-top-features"></div>
+
+        <h3 style="margin:18px 0 12px;">🤖 Agent Reasoning Trace</h3>
+        <div id="modal-reasoning"></div>
+
+        <div class="action-banner" id="modal-action"></div>
+
+        <h3 style="margin:18px 0 12px;">Analyst Action</h3>
+        <div class="decision-buttons" id="modal-decision-buttons">
+            <button class="decision-btn confirm" data-value="confirmed" onclick="makeDecision('confirmed')">✅ Confirm Attack</button>
+            <button class="decision-btn falsepos" data-value="false_positive" onclick="makeDecision('false_positive')">❌ False Positive</button>
+            <button class="decision-btn investigate" data-value="investigating" onclick="makeDecision('investigating')">🔍 Investigate Further</button>
+        </div>
+    </div>
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>
