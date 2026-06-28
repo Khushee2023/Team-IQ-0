@@ -263,3 +263,7 @@ Because cyberattack datasets are often imbalanced, macro F1 and class-wise recal
 **Team Name:** Team IQ-0
 
 This project was developed as a cybersecurity machine learning and deep learning project for network attack detection, alert prioritization, and SOC-style decision support.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
